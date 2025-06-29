@@ -1,0 +1,97 @@
+.servicecards-container {
+  padding: 80px 20px;
+  background-color: #fff;
+}
+
+.servicecards-heading {
+  font-size: 2.5rem;
+  text-align: center;
+  font-weight: 800;
+  margin-bottom: 50px;
+  color: #1a1a1a;
+  text-decoration: underline;
+  text-decoration-color: #f97316;
+  text-underline-offset: 6px;
+}
+
+.servicecards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.servicecard {
+  background-color: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.servicecard:hover {
+  transform: translateY(-6px);
+}
+
+.servicecard img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.servicecard-body {
+  padding: 20px;
+}
+
+.servicecard-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+}
+
+.servicecard-keywords {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+  color: #4a4a4a;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.servicecard-keywords li::before {
+  content: "✔️ ";
+  margin-right: 4px;
+  color: #f97316;
+}
+
+.servicecard-learnmore {
+  margin-top: 8px;
+}
+
+.learnmore-link {
+  color: #f97316;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.learnmore-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+  .servicecards-heading {
+    font-size: 2rem;
+  }
+
+  .servicecard img {
+    height: 180px;
+  }
+
+  .servicecard-title {
+    font-size: 1.2rem;
+  }
+}

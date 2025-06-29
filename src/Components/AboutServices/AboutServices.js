@@ -1,40 +1,93 @@
-// src/Components/AboutServices/AboutServices.js
-
 import React from 'react';
-import './AboutServices.css';
-import aboutImage from '../../assests/about.webp'; // ensure correct path
+import './ServiceCards.css';
 
-const AboutServices = () => {
+import applianceImg from '../../assests/gappliance.jpg';
+import washerImg from '../../assests/wrepair.jpg';
+import fridgeImg from '../../assests/fridgeRepair.webp';
+import dishwasherImg from '../../assests/dishwasher.jpg';
+
+const services = [
+  {
+    title: "General Appliance Repair",
+    keywords: [
+      "Appliance repair near me",
+      "Home appliance repair service",
+      "Same day appliance repair",
+      "Emergency appliance repair"
+    ],
+    image: applianceImg
+  },
+  {
+    title: "Washing Machine Repair",
+    keywords: [
+      "Washing machine repair near me",
+      "Front load washer repair",
+      "Top load washer repair service",
+      "Washing machine technician Dubai",
+      "Automatic washing machine repair",
+      "Samsung washing machine repair",
+      "LG washer repair Dubai"
+    ],
+    image: washerImg
+  },
+  {
+    title: "Fridge / Refrigerator Repair",
+    keywords: [
+      "Fridge repair near me",
+      "Refrigerator repair service Dubai",
+      "Fridge not cooling repair",
+      "Side by side fridge repair",
+      "Samsung fridge repair service",
+      "Bosch refrigerator repair Dubai",
+      "Fridge gas refill service"
+    ],
+    image: fridgeImg
+  },
+  {
+    title: "Dishwasher Repair",
+    keywords: [
+      "Dishwasher repair near me",
+      "Built-in dishwasher repair",
+      "Bosch dishwasher technician Dubai",
+      "Siemens dishwasher repair",
+      "Dishwasher not draining fix",
+      "Miele dishwasher service",
+      "Miele washing machine repair",
+      "Gas stove repair"
+    ],
+    image: dishwasherImg
+  }
+];
+
+const ServiceCards = () => {
   return (
-    <section className="aboutservices-section">
-      <div className="aboutservices-container">
-        <div className="aboutservices-left">
-          <h2 className="aboutservices-heading">About Our Services</h2>
-          <p className="aboutservices-description">
-            We provide expert <strong>washing machine repair services in Dubai</strong> and across the UAE. Our team of highly trained technicians can handle any brand, model, or issue with precision and care. Whether your machine is leaking, not spinning, making unusual noises, or simply not working – our specialists will diagnose and fix it efficiently.
-          </p>
-          <p className="aboutservices-description">
-            With a commitment to <strong>same-day service</strong>, <strong>affordable pricing</strong>, and genuine spare parts, we ensure your washer is up and running without delay. From diagnostics to parts replacement and complete overhauls, we’ve got your laundry needs covered – backed by our <strong>parts warranty</strong> and 100% customer satisfaction.
-          </p>
+    <section className="servicecards-section">
+      <div className="servicecards-container">
+        <h2 className="servicecards-heading">Our Specialized Services</h2>
+        <div className="servicecards-grid">
+          {services.map((service, index) => (
+            <div className="servicecard" key={index}>
+              <img src={service.image} alt={service.title} className="servicecard-img" />
+              <div className="servicecard-body">
+  <h3 className="servicecard-title">{service.title}</h3>
+  <ul className="servicecard-keywords">
+    {service.keywords.map((keyword, i) => (
+      <li key={i}>🔧 {keyword}</li>
+    ))}
+  </ul>
+  <div className="servicecard-learnmore">
+  <a href="#" className="learnmore-link">
+    Learn More &gt;
+  </a>
+</div>
+</div>
 
-          <ul className="aboutservices-list">
-            <li>✅ Expert Washing Machine Technicians</li>
-            <li>✅ 100% Satisfaction Guaranteed</li>
-            <li>✅ Same-Day Service Across UAE</li>
-            <li>✅ Affordable & Transparent Pricing</li>
-            <li>✅ One Call Repair Solution</li>
-            <li>✅ Genuine Parts with Warranty</li>
-          </ul>
-
-          <button className="aboutservices-button">Contact Us</button>
-        </div>
-
-        <div className="aboutservices-right">
-          <img src={aboutImage} alt="Washing Machine Service Team in UAE" />
+            </div>
+          ))}
         </div>
       </div>
     </section>
   );
 };
 
-export default AboutServices;
+export default ServiceCards;
