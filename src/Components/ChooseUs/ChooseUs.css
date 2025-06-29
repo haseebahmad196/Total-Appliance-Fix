@@ -1,0 +1,77 @@
+/* src/Components/ChooseUs/ChooseUs.css */
+
+.chooseus-section {
+  background-color: #fff;
+  padding: 80px 20px;
+}
+
+.chooseus-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1300px;
+  margin: 0 auto;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.chooseus-text {
+  flex: 1;
+  min-width: 320px;
+}
+
+.chooseus-heading {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 24px;
+  text-decoration: underline;
+  text-decoration-color: #f97316;
+  text-underline-offset: 8px;
+  line-height: 1.2;
+}
+
+.chooseus-description {
+  font-size: 1.15rem;
+  color: #4a4a4a;
+  line-height: 1.9;
+  font-weight: 400;
+  font-family: 'Segoe UI', sans-serif;
+  max-width: 700px;
+}
+
+.chooseus-image {
+  flex: 1.2;
+  min-width: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chooseus-image img {
+  width: 100%;
+  max-width: 620px;
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+}
+
+/* Responsive design */
+@media (max-width: 992px) {
+  .chooseus-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .chooseus-text {
+    text-align: center;
+  }
+
+  .chooseus-description {
+    text-align: center;
+  }
+
+  .chooseus-image img {
+    max-width: 90%;
+  }
+}

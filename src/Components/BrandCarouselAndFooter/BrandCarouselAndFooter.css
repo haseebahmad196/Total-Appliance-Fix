@@ -1,0 +1,129 @@
+/* Brand Carousel Styles */
+.brand-carousel-container {
+  background-color: #ffffff;
+  overflow: hidden;
+  padding: 40px 0;
+}
+
+.brand-carousel-track {
+  display: flex;
+  animation: scrollLeft 25s linear infinite;
+  width: fit-content;
+}
+
+.brand-logo {
+  min-width: 240px;
+  margin: 0 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.brand-logo img {
+  height: 80px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.9;
+  transition: all 0.3s ease;
+}
+
+.brand-logo img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+@keyframes scrollLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Footer Styles */
+.footer-wrapper {
+  background-color: #111827;
+  color: #f3f4f6;
+  padding: 60px 30px 30px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 40px;
+  max-width: 1280px;
+  margin: auto;
+}
+
+.footer-about h2 {
+  font-size: 1.8rem;
+  color: #f97316;
+  margin-bottom: 16px;
+}
+
+.footer-about p {
+  font-size: 0.95rem;
+  color: #d1d5db;
+  line-height: 1.7;
+}
+
+.footer-links h3,
+.footer-contact h3,
+.footer-social h3 {
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+  color: #facc15;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  color: #e5e7eb;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.footer-links li:hover {
+  color: #f97316;
+}
+
+.footer-contact p {
+  margin: 6px 0;
+  font-size: 0.93rem;
+  color: #d1d5db;
+}
+
+.footer-social .social-icons {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.footer-social a {
+  color: #f3f4f6;
+  background-color: #f97316;
+  padding: 10px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.footer-social a:hover {
+  background-color: #fb923c;
+  transform: scale(1.1);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 30px;
+  margin-top: 40px;
+  border-top: 1px solid #374151;
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
