@@ -1,54 +1,85 @@
-/* src/Components/ChooseUs/ChooseUs.css */
-
 .chooseus-section {
   background-color: #fff;
   padding: 80px 20px;
 }
 
 .chooseus-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   max-width: 1300px;
   margin: 0 auto;
-  gap: 60px;
-  flex-wrap: wrap;
-}
-
-.chooseus-text {
-  flex: 1;
-  min-width: 320px;
 }
 
 .chooseus-heading {
   font-size: 2.8rem;
   font-weight: 700;
   color: #1a1a1a;
-  margin-bottom: 24px;
+  margin-bottom: 40px;
   text-decoration: underline;
   text-decoration-color: #f97316;
   text-underline-offset: 8px;
   line-height: 1.2;
+  text-align: center;
 }
 
-.chooseus-description {
+.chooseus-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.chooseus-cards {
+  flex: 1;
+  min-width: 320px;
+}
+
+.cards-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.chooseus-card {
+  background-color: #fff;
+  border: 2px solid #f97316;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chooseus-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(249, 115, 22, 0.2);
+}
+
+.card-title {
+  font-size: 1.5rem;
+  color: #f97316;
+  margin-bottom: 15px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+.card-description {
   font-size: 1.15rem;
   color: #4a4a4a;
   line-height: 1.9;
   font-weight: 400;
   font-family: 'Segoe UI', sans-serif;
-  max-width: 700px;
 }
 
-.chooseus-image {
+.chooseus-images {
   flex: 1.2;
   min-width: 320px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  gap: 20px; /* Space between images */
+  justify-content: flex-start;
   align-items: center;
 }
 
-.chooseus-image img {
+.chooseus-images img {
   width: 100%;
   max-width: 620px;
   border-radius: 20px;
@@ -58,20 +89,38 @@
 
 /* Responsive design */
 @media (max-width: 992px) {
-  .chooseus-container {
+  .chooseus-content {
     flex-direction: column;
     text-align: center;
   }
 
-  .chooseus-text {
+  .chooseus-cards {
     text-align: center;
   }
 
-  .chooseus-description {
-    text-align: center;
+  .cards-wrapper {
+    grid-template-columns: 1fr;
   }
 
-  .chooseus-image img {
+  .chooseus-images {
+    margin-top: 40px;
+  }
+
+  .chooseus-images img {
     max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .chooseus-heading {
+    font-size: 2rem;
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+  }
+
+  .card-description {
+    font-size: 1rem;
   }
 }
