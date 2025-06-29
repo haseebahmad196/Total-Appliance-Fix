@@ -3,7 +3,7 @@ import TopBar from '././Components/Top bar/TopBar';
 import Header from '././Components/Header/Header';
 import Hero from './Components/Hero/Hero'; // Adjust path if needed
 import ChooseUs from './Components/ChooseUs/ChooseUs';
-import AboutServices from './Components/AboutServices/AboutServices';
+import AboutServices from './Components/AboutServices/ServiceCards.js';
 import FAQ from './Components/FAQ/FAQ';
 import Testimonials from './Components/Testimonials/Testimonials';
 import InquirySection from './Components/InquirySection/InquirySection';

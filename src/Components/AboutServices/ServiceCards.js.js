@@ -1,10 +1,10 @@
 import React from 'react';
 import './ServiceCards.css';
-
 import applianceImg from '../../assests/gappliance.jpg';
 import washerImg from '../../assests/wrepair.jpg';
-import fridgeImg from '../../assests/fridgeRepair.webp';
+import refImg from '../../assests/ref.webp';
 import dishwasherImg from '../../assests/dishwasher.jpg';
+import gasImg from '../../assests/gas.webp';
 
 const services = [
   {
@@ -41,7 +41,7 @@ const services = [
       "Bosch refrigerator repair Dubai",
       "Fridge gas refill service"
     ],
-    image: fridgeImg
+    image: refImg
   },
   {
     title: "Dishwasher Repair",
@@ -51,11 +51,21 @@ const services = [
       "Bosch dishwasher technician Dubai",
       "Siemens dishwasher repair",
       "Dishwasher not draining fix",
-      "Miele dishwasher service",
-      "Miele washing machine repair",
-      "Gas stove repair"
+      "Miele dishwasher service"
     ],
     image: dishwasherImg
+  },
+  {
+    title: "Gas Stove Repair",
+    keywords: [
+      "Gas stove repair near me",
+      "Gas stove technician Dubai",
+      "Gas stove repair service",
+      "Emergency gas stove repair",
+      "Bosch gas stove repair",
+      "Samsung gas stove service"
+    ],
+    image: gasImg
   }
 ];
 
@@ -66,22 +76,21 @@ const ServiceCards = () => {
         <h2 className="servicecards-heading">Our Specialized Services</h2>
         <div className="servicecards-grid">
           {services.map((service, index) => (
-            <div className="servicecard" key={index}>
+            <div className="servicecard" key={index} style={{ animationDelay: `${index * 0.2}s` }}>
               <img src={service.image} alt={service.title} className="servicecard-img" />
               <div className="servicecard-body">
-  <h3 className="servicecard-title">{service.title}</h3>
-  <ul className="servicecard-keywords">
-    {service.keywords.map((keyword, i) => (
-      <li key={i}>🔧 {keyword}</li>
-    ))}
-  </ul>
-  <div className="servicecard-learnmore">
-  <a href="#" className="learnmore-link">
-    Learn More &gt;
-  </a>
-</div>
-</div>
-
+                <h3 className="servicecard-title">{service.title}</h3>
+                <ul className="servicecard-keywords">
+                  {service.keywords.map((keyword, i) => (
+                    <li key={i}>• {keyword}</li>
+                  ))}
+                </ul>
+                <div className="servicecard-learnmore">
+                  <a href={`/services/${service.title.toLowerCase().replace(/ /g, '-')}`} className="learnmore-link">
+                    Learn More
+                  </a>
+                </div>
+              </div>
             </div>
           ))}
         </div>
