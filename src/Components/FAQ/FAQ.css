@@ -1,80 +1,81 @@
 .faq-section {
-  background-color: #fff;
-  padding: 100px 20px;
+  margin: 40px 0;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Cormorant Garamond', serif; /* Professional font */
 }
 
 .faq-container {
-  max-width: 1100px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
 .faq-heading {
-  font-size: 3rem;
-  font-weight: 900;
-  color: #111827;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  color: #333;
   text-align: center;
-  margin-bottom: 60px;
-  text-transform: uppercase;
-  text-decoration: underline;
-  text-underline-offset: 8px;
-  text-decoration-color: #f97316;
+  margin-bottom: 20px;
 }
 
 .faq-item {
-  margin-bottom: 25px;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
-  transition: transform 0.2s ease;
-}
-
-.faq-item:hover {
-  transform: translateY(-4px);
+  margin-bottom: 15px;
 }
 
 .faq-question {
-  background-color: #f97316;
-  color: #fff;
-  font-size: 1.25rem;
-  font-weight: 700;
-  padding: 22px 30px;
+  font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+  color: #fff; /* White text for readability on orange */
+  cursor: pointer;
+  padding: 10px;
+  background: #f97316; /* Orange background */
+  border-radius: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  cursor: pointer;
   transition: background 0.3s ease;
 }
 
 .faq-question.active {
-  background-color: #ea580c;
+  background: #e06b0e; /* Darker orange for active state */
 }
 
-.faq-icon {
-  font-size: 1.6rem;
-  font-weight: bold;
+.faq-question .faq-icon {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.faq-question.active .faq-icon {
+  transform: rotate(180deg);
 }
 
 .faq-answer {
-  background-color: #fff;
-  color: #333;
-  padding: 25px 30px;
-  font-size: 1.05rem;
-  line-height: 1.8;
-  border-top: 1px solid #f3f3f3;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  color: #4a4a4a;
+  padding: 10px 20px;
+  background: #fff;
+  border-radius: 10px;
+  margin-top: 5px;
+  display: none;
+}
+
+.faq-answer.active {
+  display: block;
 }
 
 @media (max-width: 768px) {
   .faq-heading {
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
   }
 
   .faq-question {
-    font-size: 1.05rem;
-    padding: 18px 24px;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
   }
 
   .faq-answer {
-    font-size: 1rem;
-    padding: 20px 24px;
+    font-size: clamp(0.9rem, 1.2vw, 1rem);
   }
 }
+
+/* Ensure Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap');

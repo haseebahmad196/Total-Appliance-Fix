@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import TopBar from './Components/Top bar/TopBar.js';
-import Header from '././Components/Header/Header';
+import Header from './Components/Header/Header';
 import Hero from './Components/Hero/Hero'; // Adjust path if needed
 import ChooseUs from './Components/ChooseUs/ChooseUs';
 import ServiceCards from './Components/ServiceCards/ServiceCards.js';
@@ -15,7 +15,7 @@ import './App.css';
 function App() {
   return (
     <Router>
-      <div>
+      <div className="app-container">
         <TopBar />
         <Header />
         <Routes>

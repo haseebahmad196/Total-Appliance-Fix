@@ -74,7 +74,8 @@ const ServiceCards = () => {
   return (
     <section className="servicecards-section">
       <div className="servicecards-container">
-        <h2 className="servicecards-heading">Our Specialized Services</h2>
+        <h2 className="servicecards-heading">We Repair and Service All Major Appliances
+</h2>
         <div className="servicecards-grid">
           {services.map((service, index) => (
             <div className="servicecard" key={index} style={{ animationDelay: `${index * 0.2}s` }}>
@@ -90,6 +91,9 @@ const ServiceCards = () => {
                   <Link
                     to={`/services/${service.title.toLowerCase().replace(/ /g, '-')}`}
                     className="learnmore-link"
+                    onClick={(e) => {
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
                   >
                     Learn More
                   </Link>
