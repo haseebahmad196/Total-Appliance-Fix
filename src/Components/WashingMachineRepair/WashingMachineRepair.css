@@ -1,0 +1,235 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.wmrepair-section {
+  background: linear-gradient(135deg, #ffffff 0%, #e5e4e2 80%); /* Platinum gradient */
+  min-height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  padding: 0; /* Remove padding to avoid overflow */
+  display: flex;
+  justify-content: center;
+}
+
+.wmrepair-content {
+  width: 100%;
+  max-width: 1900px; /* Limit max width on large screens */
+  padding: 0 20px; /* Minimal padding */
+  box-sizing: border-box;
+}
+
+.wmrepair-heading {
+  font-family: 'Great Vibes', cursive; /* Retain for heading elegance */
+  font-size: clamp(3.5rem, 6vw, 5.5rem); /* Fluid, opulent size */
+  color: #f97316; /* Orange heading */
+  margin: 40px 0 30px; /* Elegant spacing */
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Regal glow */
+  text-align: center;
+}
+
+.wmrepair-image {
+  width: 100%;
+  height: clamp(300px, 40vw, 500px); /* Fluid, premium height */
+  object-fit: cover;
+  border-radius: 30px; /* Elegant curve */
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2); /* Luxurious shadow */
+  margin-bottom: 40px; /* Space below image */
+}
+
+.wmrepair-description {
+  font-size: clamp(1.2rem, 1.8vw, 1.5rem); /* Fluid size */
+  color: #4a4a4a;
+  line-height: 1.9;
+  margin-bottom: 30px;
+  text-align: justify;
+}
+
+.wmrepair-booking-btn {
+  display: inline-block;
+  padding: clamp(12px, 2.5vw, 20px) clamp(30px, 4vw, 50px);
+  background-color: #f97316; /* Orange button */
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: clamp(1.2rem, 1.8vw, 1.5rem); /* Fluid size */
+  font-family: 'Roboto', sans-serif; /* Professional font */
+  border-radius: 40px; /* Elegant curve */
+  transition: all 0.6s ease;
+  box-shadow: 0 5px 15px rgba(249, 115, 22, 0.4); /* Orange glow */
+  margin-bottom: 20px;
+  display: block; /* Block for centering */
+  text-align: center;
+}
+
+.wmrepair-booking-btn:hover {
+  background-color: #e06b0e; /* Darker orange */
+  transform: scale(1.05); /* Subtle scale */
+  box-shadow: 0 8px 20px rgba(224, 107, 14, 0.6); /* Deeper glow */
+}
+
+.wmrepair-booking-note {
+  font-size: clamp(1rem, 1.5vw, 1.2rem); /* Fluid size */
+  color: #666;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.wmrepair-problems {
+  margin: 40px 0;
+}
+
+.wmrepair-problems-heading {
+  font-family: 'Great Vibes', cursive; /* Retain for heading elegance */
+  font-size: clamp(2.8rem, 5vw, 4rem); /* Slightly smaller but aligned */
+  color: #f97316; /* Orange heading */
+  margin-bottom: 20px;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Regal glow */
+  text-align: center;
+}
+
+.wmrepair-problems-description {
+  font-size: clamp(1.1rem, 1.7vw, 1.4rem); /* Fluid size */
+  color: #4a4a4a;
+  line-height: 1.9;
+  margin-bottom: 30px;
+  text-align: justify;
+}
+
+.wmrepair-problems-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Elegant spacing between items */
+}
+
+.wmrepair-problems-item {
+  font-size: clamp(1.1rem, 1.6vw, 1.3rem); /* Slightly larger for luxury */
+  color: #4a4a4a;
+  line-height: 1.8;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.95); /* Subtle background */
+  border: 2px solid #d4af37; /* Gold border */
+  border-radius: 15px; /* Elegant curve */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Luxurious shadow */
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.wmrepair-problems-item .tick {
+  color: #28a745; /* Green tick */
+  margin-right: 10px;
+  font-size: 1.2em;
+}
+
+.wmrepair-problems-item:hover {
+  transform: translateY(-5px); /* Lift on hover */
+  box-shadow: 0 15px 30px rgba(212, 175, 55, 0.3); /* Enhanced glow */
+}
+
+.wmrepair-process {
+  margin: 40px 0;
+}
+
+.wmrepair-process-title {
+  font-family: 'Great Vibes', cursive; /* Retain for heading elegance */
+  font-size: clamp(2rem, 3.5vw, 2.5rem); /* Fluid size */
+  color: #1a1a1a;
+  margin-bottom: 15px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.wmrepair-process-image {
+  width: 100%;
+  height: clamp(200px, 30vw, 300px); /* Fluid image size */
+  object-fit: cover;
+  border-radius: 20px; /* Elegant curve */
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2); /* Luxurious shadow */
+  margin-bottom: 20px; /* Space before description */
+}
+
+.wmrepair-process-description {
+  font-size: clamp(1.1rem, 1.7vw, 1.4rem); /* Fluid size */
+  color: #4a4a4a;
+  line-height: 1.9;
+  margin-bottom: 40px;
+  text-align: justify;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .wmrepair-content {
+    padding: 0 15px; /* Minimal padding */
+  }
+
+  .wmrepair-image {
+    height: clamp(200px, 30vw, 350px);
+  }
+
+  .wmrepair-problems-list {
+    flex-direction: column; /* Ensure vertical stack */
+  }
+}
+
+@media (max-width: 768px) {
+  .wmrepair-heading {
+    font-size: clamp(2.5rem, 7vw, 3.5rem);
+  }
+
+  .wmrepair-description {
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+  }
+
+  .wmrepair-booking-btn {
+    font-size: clamp(1.1rem, 1.6vw, 1.3rem);
+    padding: clamp(10px, 2vw, 15px) clamp(20px, 3vw, 30px);
+  }
+
+  .wmrepair-problems-heading {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+  }
+
+  .wmrepair-process-title {
+    font-size: clamp(1.6rem, 3vw, 2rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .wmrepair-heading {
+    font-size: clamp(2rem, 8vw, 2.5rem);
+  }
+
+  .wmrepair-description {
+    font-size: clamp(0.9rem, 1.2vw, 1rem);
+  }
+
+  .wmrepair-booking-btn {
+    font-size: clamp(0.9rem, 1.3vw, 1.1rem);
+    padding: clamp(8px, 1.5vw, 12px) clamp(15px, 2.5vw, 20px);
+  }
+
+  .wmrepair-problems-heading {
+    font-size: clamp(1.6rem, 3.5vw, 2rem);
+  }
+
+  .wmrepair-process-title {
+    font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  }
+}

@@ -5,6 +5,7 @@ import washerImg from '../../assests/wrepair.jpg';
 import refImg from '../../assests/ref.webp';
 import dishwasherImg from '../../assests/dishwasher.jpg';
 import gasImg from '../../assests/gas.webp';
+import { Link } from 'react-router-dom'; // Confirm import
 
 const services = [
   {
@@ -86,9 +87,12 @@ const ServiceCards = () => {
                   ))}
                 </ul>
                 <div className="servicecard-learnmore">
-                  <a href={`/services/${service.title.toLowerCase().replace(/ /g, '-')}`} className="learnmore-link">
+                  <Link
+                    to={`/services/${service.title.toLowerCase().replace(/ /g, '-')}`}
+                    className="learnmore-link"
+                  >
                     Learn More
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
