@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import logo from '../../assests/logo.webp';
-import '../Header/Header.css'
+import './Header.css'
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,13 +25,11 @@ function Header() {
 
   return (
     <nav className="header" aria-label="Main navigation">
-      {/* Logo */}
       <div className="logo">
         <a href="/">
           <img src={logo} alt="FixQuick Appliance Repair Logo" className="logo-img" />
         </a>
       </div>
-      {/* Navigation Links */}
       <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
         <li><a href="/" className="nav-link">Home</a></li>
         <li className="dropdown">
@@ -93,21 +91,22 @@ function Header() {
           </ul>
         </li>
         <li><a href="/about" className="nav-link">About</a></li>
-        <li><a href="/contact" className="nav-link">Contact Us</a></li>
-        {/* Phone Number in Mobile Menu */}
+        <li>
+          <a href="/booking" className="nav-link booking-button">
+            <i className="fas fa-calendar-alt"></i> Easy Online Booking
+          </a>
+        </li>
         <li className="mobile-cta">
           <a href="tel:+971586143836" className="cta-button">
             <i className="fas fa-phone"></i> +971 58 614 3836
           </a>
         </li>
       </ul>
-      {/* Phone Number CTA for Web */}
       <div className="cta">
         <a href="tel:+971586143836" className="cta-button">
           <i className="fas fa-phone"></i> +971 58 614 3836
         </a>
       </div>
-      {/* Hamburger Icon for Mobile */}
       <div className="hamburger" aria-label="Toggle menu" onClick={toggleMenu}>
         <span className={`hamburger-icon ${isMenuOpen ? 'open' : ''}`}>
           <span></span>

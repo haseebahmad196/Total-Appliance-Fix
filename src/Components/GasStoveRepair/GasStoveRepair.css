@@ -16,7 +16,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-.wmrepair-section {
+.gasstove-section {
   background: linear-gradient(135deg, #ffffff 0%, #f9f1e0 100%);
   min-height: 100vh;
   width: 100%;
@@ -26,7 +26,7 @@ code {
   padding: 140px 60px;
 }
 
-.wmrepair-content {
+.gasstove-content {
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
@@ -34,7 +34,7 @@ code {
   box-sizing: border-box;
 }
 
-.wmrepair-heading {
+.gasstove-heading {
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-size: clamp(2.8rem, 5vw, 4.5rem);
@@ -48,8 +48,8 @@ code {
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.wmrepair-image,
-.wmrepair-process-image {
+.gasstove-image,
+.gasstove-process-image {
   width: 100%;
   max-width: 100%;
   height: auto;
@@ -59,7 +59,7 @@ code {
   margin-bottom: clamp(30px, 4vw, 50px);
 }
 
-.wmrepair-description {
+.gasstove-description {
   font-family: 'Roboto', sans-serif;
   font-size: clamp(1.2rem, 1.8vw, 1.5rem);
   color: #4a4a4a;
@@ -68,7 +68,7 @@ code {
   text-align: center;
 }
 
-.wmrepair-booking-btn {
+.gasstove-booking-btn {
   display: block;
   width: fit-content;
   margin: 0 auto clamp(20px, 2vw, 35px);
@@ -84,13 +84,13 @@ code {
   box-shadow: 0 4px 10px rgba(249, 115, 22, 0.3);
 }
 
-.wmrepair-booking-btn:hover {
+.gasstove-booking-btn:hover {
   background-color: #e06b0e;
   transform: scale(1.12);
   box-shadow: 0 6px 15px rgba(224, 107, 14, 0.5);
 }
 
-.wmrepair-booking-note {
+.gasstove-booking-note {
   font-family: 'Roboto', sans-serif;
   font-size: clamp(0.9rem, 1.2vw, 1.1rem);
   color: #666;
@@ -98,11 +98,11 @@ code {
   text-align: center;
 }
 
-.wmrepair-problems {
+.gasstove-problems {
   margin: clamp(40px, 5vw, 60px) 0;
 }
 
-.wmrepair-problems-heading {
+.gasstove-problems-heading {
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-size: clamp(2.2rem, 4vw, 3rem);
@@ -116,7 +116,7 @@ code {
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.wmrepair-problems-description {
+.gasstove-problems-description {
   font-family: 'Roboto', sans-serif;
   font-size: clamp(1rem, 1.5vw, 1.2rem);
   color: #4a4a4a;
@@ -125,7 +125,7 @@ code {
   text-align: center;
 }
 
-.wmrepair-problems-list {
+.gasstove-problems-list {
   list-style: none;
   padding: 0;
   display: grid;
@@ -135,7 +135,7 @@ code {
   max-width: 1400px;
 }
 
-.wmrepair-problems-item {
+.gasstove-problems-item {
   font-family: 'Roboto', sans-serif;
   font-size: clamp(1rem, 1.4vw, 1.2rem);
   color: #333;
@@ -152,22 +152,22 @@ code {
   animation: fadeInUp 1.2s ease-out;
 }
 
-.wmrepair-problems-item .tick {
+.gasstove-problems-item .tick {
   color: #28a745;
   margin-right: 10px;
   font-size: 1.2em;
 }
 
-.wmrepair-problems-item:hover {
+.gasstove-problems-item:hover {
   transform: translateY(-15px);
   box-shadow: 0 30px 100px rgba(212, 175, 55, 0.4);
 }
 
-.wmrepair-process {
+.gasstove-process {
   margin: clamp(40px, 5vw, 60px) 0;
 }
 
-.wmrepair-process-title {
+.gasstove-process-title {
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-size: clamp(1.8rem, 3vw, 2.5rem);
@@ -180,7 +180,7 @@ code {
   text-underline-offset: 10px;
 }
 
-.wmrepair-process-description {
+.gasstove-process-description {
   font-family: 'Roboto', sans-serif;
   font-size: clamp(1rem, 1.5vw, 1.2rem);
   color: #4a4a4a;
@@ -222,17 +222,17 @@ code {
 
 /* Responsive design */
 @media (max-width: 1024px) {
-  .wmrepair-section {
+  .gasstove-section {
     padding: 90px 30px;
   }
 
-  .wmrepair-image,
-  .wmrepair-process-image {
+  .gasstove-image,
+  .gasstove-process-image {
     height: auto;
     max-height: 300px;
   }
 
-  .wmrepair-problems-list {
+  .gasstove-problems-list {
     grid-template-columns: 1fr;
   }
 
@@ -247,51 +247,51 @@ code {
 }
 
 @media (max-width: 768px) {
-  .wmrepair-heading {
+  .gasstove-heading {
     font-size: clamp(2.2rem, 6vw, 2.8rem);
   }
 
-  .wmrepair-description {
+  .gasstove-description {
     font-size: clamp(0.9rem, 1.3vw, 1.1rem);
   }
 
-  .wmrepair-booking-btn {
+  .gasstove-booking-btn {
     font-size: clamp(1rem, 1.3vw, 1.1rem);
     padding: clamp(10px, 1.5vw, 15px) clamp(20px, 2.5vw, 30px);
   }
 
-  .wmrepair-problems-heading {
+  .gasstove-problems-heading {
     font-size: clamp(1.8rem, 3.5vw, 2.5rem);
   }
 
-  .wmrepair-process-title {
+  .gasstove-process-title {
     font-size: clamp(1.5rem, 2.5vw, 2rem);
   }
 }
 
 @media (max-width: 480px) {
-  .wmrepair-section {
+  .gasstove-section {
     padding: 70px 20px;
   }
 
-  .wmrepair-heading {
+  .gasstove-heading {
     font-size: clamp(1.8rem, 8vw, 2.2rem);
   }
 
-  .wmrepair-description {
+  .gasstove-description {
     font-size: clamp(0.8rem, 1.2vw, 1rem);
   }
 
-  .wmrepair-booking-btn {
+  .gasstove-booking-btn {
     font-size: clamp(0.9rem, 1.2vw, 1rem);
     padding: clamp(8px, 1vw, 12px) clamp(15px, 2vw, 20px);
   }
 
-  .wmrepair-problems-heading {
+  .gasstove-problems-heading {
     font-size: clamp(1.6rem, 3vw, 2rem);
   }
 
-  .wmrepair-process-title {
+  .gasstove-process-title {
     font-size: clamp(1.3rem, 2vw, 1.8rem);
   }
 

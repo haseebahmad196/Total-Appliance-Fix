@@ -1,41 +1,75 @@
 .header {
-  background-color: #fff;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-  padding: 2rem 2.5rem;
+  background: linear-gradient(90deg, #ffffff, #f8fafc);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
-  z-index: 20;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .logo-img {
-  height: 4rem;
+  height: 3.5rem;
   width: auto;
+  transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.05);
 }
 
 .nav-links {
   display: flex;
-  gap: 1.75rem;
-  flex-wrap: wrap;
-  justify-content: center;
+  gap: 1.5rem;
   list-style: none;
   margin: 0;
   padding: 0;
+  align-items: center;
 }
 
 .nav-link {
-  color: #333;
+  color: #1f2937;
   text-decoration: none;
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-family: 'Poppins', sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   transition: color 0.3s ease, transform 0.2s ease;
+  padding: 0.5rem 0;
 }
 
 .nav-link:hover {
   color: #f97316;
-  transform: translateY(-2px);
+  transform: translateY(-1px);
+}
+
+.booking-button {
+  border: 2px solid #2563eb;
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.2);
+}
+
+.booking-button:hover {
+  background: linear-gradient(90deg, #1e40af, #2563eb);
+  border-color: #1e40af;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.booking-button i {
+  font-size: 0.9rem;
 }
 
 .dropdown {
@@ -43,7 +77,8 @@
 }
 
 .dropdown-arrow {
-  margin-left: 0.25rem;
+  margin-left: 0.3rem;
+  font-size: 0.9rem;
 }
 
 .dropdown-menu {
@@ -51,13 +86,15 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #fff;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   list-style: none;
-  padding: 0.875rem 0;
-  margin: 0;
-  min-width: 15rem;
+  padding: 0.75rem 0;
+  margin: 0.25rem 0 0 0;
+  min-width: 14rem;
   z-index: 10;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
 }
 
 .dropdown:hover .dropdown-menu {
@@ -66,42 +103,44 @@
 
 .dropdown-item {
   display: block;
-  color: #333;
+  color: #1f2937;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-family: 'Roboto', sans-serif;
-  padding: 0.75rem 1.25rem;
-  transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+  font-weight: 400;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
 }
 
 .dropdown-item:hover {
   color: #f97316;
-  background-color: #f9fafb;
-  transform: translateX(4px);
+  background: #f8fafc;
+  transform: translateX(3px);
 }
 
 .cta-button {
-  background-color: #2563eb;
-  color: #fff;
-  padding: 0.75rem 1.5rem;
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  color: #ffffff;
+  padding: 0.6rem 1.2rem;
   border-radius: 0.5rem;
   text-decoration: none;
-  font-size: 1.1875rem;
+  font-size: 0.95rem;
   font-family: 'Poppins', sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  gap: 0.4rem;
+  transition: all 0.3s ease;
 }
 
 .cta-button:hover {
-  background-color: #1e40af;
-  transform: scale(1.05);
+  background: linear-gradient(90deg, #1e40af, #2563eb);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .cta-button i {
-  font-size: 1.125rem;
+  font-size: 0.9rem;
 }
 
 .mobile-cta {
@@ -112,56 +151,41 @@
 }
 
 .mobile-cta .cta-button {
-  width: 80%;
+  width: 85%;
   justify-content: center;
 }
 
 .hamburger {
   display: none;
-  font-size: 2rem;
-  color: #333;
   cursor: pointer;
   position: absolute;
   top: 1.5rem;
   right: 1.5rem;
-  width: 2.5rem;
-  height: 2.5rem;
-  z-index: 30;
+  width: 2rem;
+  height: 1.5rem;
+  z-index: 1001;
 }
 
 .hamburger-icon {
   position: relative;
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .hamburger-icon span {
-  position: absolute;
-  height: 0.3rem;
+  height: 0.25rem;
   width: 100%;
   background-color: #f97316;
   transition: all 0.3s ease;
-  left: 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  border-radius: 3px;
-}
-
-.hamburger-icon span:nth-child(1) {
-  top: 0.4rem;
-}
-
-.hamburger-icon span:nth-child(2) {
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.hamburger-icon span:nth-child(3) {
-  bottom: 0.4rem;
+  border-radius: 2px;
 }
 
 .hamburger-icon.open span:nth-child(1) {
-  transform: rotate(45deg) translate(0.5rem, 0.5rem);
-  background-color: #fff; /* White X */
+  transform: translateY(0.65rem) rotate(45deg);
+  background-color: #ffffff;
 }
 
 .hamburger-icon.open span:nth-child(2) {
@@ -169,26 +193,29 @@
 }
 
 .hamburger-icon.open span:nth-child(3) {
-  transform: rotate(-45deg) translate(0.5rem, -0.5rem);
-  background-color: #fff; /* White X */
+  transform: translateY(-0.65rem) rotate(-45deg);
+  background-color: #ffffff;
 }
 
 @media (max-width: 1024px) {
+  .header {
+    padding: 1rem 1.5rem;
+  }
   .nav-links {
     display: none;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(to bottom, #f97316, #ea580c);
+    background: linear-gradient(180deg, #f97316, #ea580c);
     flex-direction: column;
     align-items: center;
-    padding: 4rem 1.5rem 1.5rem;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    z-index: 10;
+    padding: 4rem 1.5rem 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    min-height: 100vh;
+    width: 100%;
     animation: slideIn 0.3s ease-out;
-    border-radius: 0 0 1rem 1rem;
-    height: 100vh;
   }
   .nav-links.active {
     display: flex;
@@ -200,17 +227,44 @@
   .dropdown-menu {
     position: static;
     width: 100%;
+    background: transparent;
     box-shadow: none;
-    background: linear-gradient(to bottom, #f97316, #ea580c);
     margin-top: 0.5rem;
     border-radius: 0.5rem;
   }
-  .dropdown.active .dropdown-menu {
+  .dropdown-menu.active {
     display: block;
   }
   .nav-link,
   .dropdown-item {
-    color: #fff;
+    color: #ffffff;
+    font-size: 0.95rem;
+  }
+  .booking-button {
+    border: 2px solid #ffffff;
+    background: transparent;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.95rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: all 0.3s ease;
+    width: 85%;
+    justify-content: center;
+    margin: 0.5rem auto;
+  }
+  .booking-button:hover {
+    background: #ffffff;
+    color: #f97316;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+  }
+  .booking-button i {
+    font-size: 0.9rem;
   }
   .nav-link:hover,
   .dropdown-item:hover {
@@ -230,37 +284,47 @@
 
 @media (max-width: 640px) {
   .header {
-    padding: 1.25rem 1.5rem;
+    padding: 1rem 1.25rem;
   }
   .logo-img {
     height: 3rem;
   }
   .nav-link {
-    font-size: 1.125rem;
+    font-size: 0.9rem;
   }
   .dropdown-item {
-    font-size: 0.9375rem;
+    font-size: 0.85rem;
+  }
+  .booking-button {
+    font-size: 0.9rem;
+    width: 90%;
   }
   .mobile-cta .cta-button {
     width: 90%;
+    font-size: 0.9rem;
   }
 }
 
 @media (max-width: 320px) {
   .header {
-    padding: 1rem 1rem;
+    padding: 0.75rem 1rem;
   }
   .logo-img {
     height: 2.5rem;
   }
   .nav-link {
-    font-size: 1rem;
+    font-size: 0.85rem;
   }
   .dropdown-item {
-    font-size: 0.875rem;
+    font-size: 0.8rem;
+  }
+  .booking-button {
+    font-size: 0.85rem;
+    width: 100%;
   }
   .mobile-cta .cta-button {
     width: 100%;
+    font-size: 0.85rem;
   }
 }
 

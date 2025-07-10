@@ -1,9 +1,9 @@
 import React from 'react';
 import './ServiceCards.css';
-import applianceImg from '../../assests/gappliance.jpg';
+import applianceImg from '../../assests/ga1.jpg';
 import washerImg from '../../assests/wrepair.jpg';
 import refImg from '../../assests/ref.webp';
-import dishwasherImg from '../../assests/dishwasher.jpg';
+import dishwasherImg from '../../assests/d1.webp';
 import gasImg from '../../assests/gas.webp';
 import { Link } from 'react-router-dom'; // Confirm import
 
@@ -14,7 +14,9 @@ const services = [
       "Appliance repair near me",
       "Home appliance repair service",
       "Same day appliance repair",
-      "Emergency appliance repair"
+      "Emergency appliance repair",
+      "Appliance repair Dubai",
+      "Technical appliance repair"
     ],
     image: applianceImg
   },
@@ -48,23 +50,26 @@ const services = [
     title: "Dishwasher Repair",
     keywords: [
       "Dishwasher repair near me",
-      "Built-in dishwasher repair",
-      "Bosch dishwasher technician Dubai",
-      "Siemens dishwasher repair",
-      "Dishwasher not draining fix",
-      "Miele dishwasher service"
+      "Dishwasher repair service Dubai",
+      "Dishwasher not cleaning fix",
+      "Bosch dishwasher repair",
+      "Samsung dishwasher service",
+      "Dishwasher leaking repair",
+      "Miele dishwasher technician"
     ],
     image: dishwasherImg
   },
   {
-    title: "Gas Stove Repair",
+    title: "Kitchen Gas or Electric Oven, Stove, & Range Repair",
     keywords: [
       "Gas stove repair near me",
       "Gas stove technician Dubai",
       "Gas stove repair service",
       "Emergency gas stove repair",
       "Bosch gas stove repair",
-      "Samsung gas stove service"
+      "Samsung gas stove service",
+      "Oven repair Dubai",
+      "Electric stove repair"
     ],
     image: gasImg
   }
@@ -74,8 +79,7 @@ const ServiceCards = () => {
   return (
     <section className="servicecards-section">
       <div className="servicecards-container">
-        <h2 className="servicecards-heading">We Repair and Service All Major Appliances
-</h2>
+        <h2 className="servicecards-heading">We Repair and Service All Major Appliances</h2>
         <div className="servicecards-grid">
           {services.map((service, index) => (
             <div className="servicecard" key={index} style={{ animationDelay: `${index * 0.2}s` }}>
@@ -89,7 +93,7 @@ const ServiceCards = () => {
                 </ul>
                 <div className="servicecard-learnmore">
                   <Link
-                    to={`/services/${service.title.toLowerCase().replace(/ /g, '-')}`}
+                    to={`/services/${service.title.toLowerCase().replace(/\/|&|\s|,|\(|\)/g, '-')}`}
                     className="learnmore-link"
                     onClick={(e) => {
                       window.scrollTo({ top: 0, behavior: 'smooth' });

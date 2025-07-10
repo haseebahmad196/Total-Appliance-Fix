@@ -10,6 +10,10 @@ import Testimonials from './Components/Testimonials/Testimonials';
 import InquirySection from './Components/InquirySection/InquirySection';
 import BrandCarouselAndFooter from './Components/BrandCarouselAndFooter/BrandCarouselAndFooter';
 import WashingMachineRepair from './Components/WashingMachineRepair/WashingMachineRepair';
+import RefrigeratorRepair from './Components/RefrigeratorRepair/RefrigeratorRepair';
+import DishwasherRepair from './Components/DishwasherRepair/DishwasherRepair';
+import GasStoveRepair from './Components/GasStoveRepair/GasStoveRepair';
+import GeneralApplianceRepair from './Components/GeneralApplianceRepair/GeneralApplianceRepair';
 import './App.css';
 
 function App() {
@@ -25,7 +29,7 @@ function App() {
               <>
                 <Hero />
                 <ChooseUs />
-                <ServiceCards />
+                <ServiceCards /> 
                 <FAQ />
                 <Testimonials />
                 <InquirySection />
@@ -37,7 +41,23 @@ function App() {
             path="/services/washing-machine-repair"
             element={<WashingMachineRepair />}
           />
-          <Route path="*" element={<ServiceCards />} /> {/* Fallback route */}
+          <Route
+            path="/services/fridge-refrigerator-repair"
+            element={<RefrigeratorRepair />}
+          />
+          <Route
+            path="/services/dishwasher-repair"
+            element={<DishwasherRepair />}
+          />
+          <Route
+            path="/services/kitchen-gas-or-electric-oven-stove-range-repair"
+            element={<GasStoveRepair />}
+          />
+          <Route
+            path="/services/general-appliance-repair"
+            element={<GeneralApplianceRepair />}
+          />
+          <Route path="*" element={<RefrigeratorRepair />} /> {/* Fallback route */}
         </Routes>
       </div>
     </Router>
