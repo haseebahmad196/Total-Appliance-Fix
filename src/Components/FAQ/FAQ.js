@@ -1,76 +1,88 @@
 import React, { useState } from 'react';
 import './FAQ.css';
+import { FaPlus, FaMinus } from 'react-icons/fa';
 
-const faqData = [
+const faqs = [
   {
-    question: "How do I know if my washing machine needs repair?",
-    answer: "You may need a washing machine repair in Dubai if you notice loud noises, water leaks, failure to spin, or unusually long cycles. These signs often indicate mechanical or electrical issues. Our expert technicians in Dubai can diagnose and fix these problems early, preventing costly breakdowns and ensuring your appliance’s longevity."
+    question: "What types of appliances do you repair?",
+    answer: "We repair a wide range of household appliances, including washing machines, refrigerators, dishwashers, gas and electric ovens, stoves, and ranges. Our technicians are trained to service all major brands with precision and care."
   },
   {
-    question: "How much will the washing machine repair cost?",
-    answer: "The cost of washing machine repair in Dubai typically ranges from AED 100 to AED 350, depending on the issue and parts needed. We offer transparent, competitive pricing with no hidden fees, ensuring you receive high-quality service that fits your budget and meets your satisfaction."
+    question: "How quickly can you schedule a repair?",
+    answer: "We offer same-day or next-day appointments in most cases, depending on availability. Contact us to schedule a service call at your convenience, and we’ll work around your schedule."
   },
   {
-    question: "Should I attempt to repair the washing machine myself?",
-    answer: "No, DIY washing machine repair in Dubai is not recommended. These appliances involve high-voltage components and delicate electronics, risking further damage or voiding your warranty. Rely on our certified Dubai technicians for safe, professional, and reliable repairs."
+    question: "Are your technicians certified and experienced?",
+    answer: "Yes, all our technicians are certified professionals with extensive experience in appliance repair. They undergo regular training to stay updated on the latest technologies and repair techniques."
   },
   {
-    question: "Is it more cost-effective to repair or replace a washing machine?",
-    answer: "Repairing is cost-effective if the cost is less than 50% of your machine’s value and it’s under 8-10 years old. Our Dubai repair experts provide a free cost-benefit analysis, helping you make an informed decision that saves money and ensures client satisfaction."
+    question: "Do you provide a warranty for your repairs?",
+    answer: "We stand behind our work with a satisfaction guarantee and offer a warranty on parts and labor. The warranty period depends on the service provided—please contact us for specific details."
   },
   {
-    question: "How long does a typical washing machine repair take?",
-    answer: "A typical washing machine repair in Dubai takes 1-2 hours, with our team offering same-day service using genuine parts. This fast response minimizes downtime, restoring your appliance’s performance and providing excellent client convenience."
+    question: "What areas do you serve in Dubai?",
+    answer: "We provide appliance repair services across Dubai and surrounding areas. Whether you’re in Downtown Dubai, Jumeirah, or elsewhere, our team is ready to assist you promptly."
   },
   {
-    question: "How much is washing machine repair in Dubai?",
-    answer: "Washing machine repair services in Dubai start at AED 120, with a detailed quote provided after inspection based on labor, parts, and brand. Our affordable rates and expert service ensure you get value and reliability for every repair."
+    question: "Can you repair appliances from all brands?",
+    answer: "Yes, our technicians are skilled in repairing appliances from all major brands, including Samsung, LG, Bosch, Miele, and more. We use genuine parts to ensure lasting repairs."
   },
   {
-    question: "Is it worth repairing a washing machine?",
-    answer: "Yes, repairing your washing machine in Dubai is worth it if it’s not obsolete or has multiple issues. Professional repairs can extend its life by several years at a fraction of the replacement cost, offering peace of mind and satisfaction to our clients."
+    question: "What should I do if my appliance is under warranty?",
+    answer: "If your appliance is under manufacturer warranty, we can work with you to diagnose the issue and coordinate with the brand for repairs. Contact us with your warranty details for assistance."
   },
   {
-    question: "Which washing machine is best in UAE?",
-    answer: "The best washing machines in the UAE include LG, Bosch, Samsung, and Siemens, praised for their efficiency, durability, and local service support. Our Dubai experts can recommend the ideal model based on your household needs and preferences."
-  },
-  {
-    question: "How long do washing machines last?",
-    answer: "Washing machines in the UAE typically last 10-13 years with proper care and regular servicing. Schedule maintenance with our Dubai professionals to avoid overloading and maximize your appliance’s lifespan."
-  },
-  {
-    question: "What parts fail in a washing machine?",
-    answer: "Common failing parts include pumps, motors, belts, valves, and control boards. Our skilled Dubai repair team uses advanced diagnostics to identify and replace these components, ensuring your washing machine runs efficiently and reliably."
+    question: "How much will my appliance repair cost?",
+    answer: "Repair costs depend on the appliance type, issue, and required parts. We provide transparent quotes before starting work. Contact us for a free estimate based on your specific needs."
   }
 ];
 
 const FAQ = () => {
-  const [activeIndex, setActiveIndex] = useState(0); // Set first FAQ as default open
+  const [activeIndex, setActiveIndex] = useState(null);
+  const [showAll, setShowAll] = useState(false);
 
   const toggleFAQ = (index) => {
-    setActiveIndex(activeIndex === index ? null : index); // Toggle or close
+    setActiveIndex(activeIndex === index ? null : index);
   };
+
+  const toggleShowAll = () => {
+    setShowAll(!showAll);
+    setActiveIndex(null); // Close all answers when toggling
+  };
+
+  const displayedFaqs = showAll ? faqs : faqs.slice(0, 4);
 
   return (
     <section className="faq-section">
       <div className="faq-container">
         <h2 className="faq-heading">Frequently Asked Questions</h2>
-        {faqData.map((faq, index) => (
-          <div className="faq-item" key={index}>
-            <div
-              className={`faq-question ${activeIndex === index ? 'active' : ''}`}
-              onClick={() => toggleFAQ(index)}
-            >
-              <span>{faq.question}</span>
-              <span className="faq-icon">{activeIndex === index ? '−' : '+'}</span>
-            </div>
-            {activeIndex === index && (
-              <div className="faq-answer">
-                <p>{faq.answer}</p>
+        <div className="faq-line"></div>
+        <p className="faq-description">
+          Our expert technicians know how important your household appliances are to your daily routine. That’s why we go beyond just fixing the problem—we aim to provide top-tier service with professionalism, cleanliness, and care. Below, we’ve answered some common questions about our services, process, and what sets us apart.
+        </p>
+        <div className="faq-grid">
+          {displayedFaqs.map((faq, index) => (
+            <div className="faq-card" key={index} style={{ animationDelay: `${index * 0.2}s` }}>
+              <div className="faq-card-border"></div>
+              <div className="faq-card-content">
+                <div className="faq-question" onClick={() => toggleFAQ(index)}>
+                  <h3 className="faq-question-text">{faq.question}</h3>
+                  <span className="faq-toggle-icon">
+                    {activeIndex === index ? <FaMinus /> : <FaPlus />}
+                  </span>
+                </div>
+                <div className={`faq-answer ${activeIndex === index ? 'faq-answer-open' : ''}`}>
+                  <p>{faq.answer}</p>
+                </div>
               </div>
-            )}
-          </div>
-        ))}
+            </div>
+          ))}
+        </div>
+        <div className="faq-button-container">
+          <button className="faq-view-all-button" onClick={toggleShowAll}>
+            {showAll ? 'Hide FAQs' : 'View All FAQs'}
+          </button>
+        </div>
       </div>
     </section>
   );

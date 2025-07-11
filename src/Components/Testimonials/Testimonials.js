@@ -1,56 +1,92 @@
 import React, { useState } from 'react';
 import './Testimonials.css';
-import backgroundImage from '../../assests/test.webp';
+import { FaCommentAlt, FaStar } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const testimonials = [
   {
-    name: "Sana",
-    review: "Our washing machine which was not working. We called Fix Quick Service and they repaired it the same day in a few hours.",
+    name: "Mohammed A.",
+    review: "My washing machine stopped spinning, and Fix Quick Service repaired it the same day. Professional and efficient team!",
+    rating: "5/5"
   },
   {
-    name: "Ayaan K.",
-    review: "Excellent same-day service. Clean work and professional team.",
+    name: "Fatima S.",
+    review: "Excellent service for my fridge repair. The technician was knowledgeable and fixed the cooling issue quickly.",
+    rating: "5/5"
   },
   {
-    name: "Fatima Z.",
-    review: "Very helpful and fast repair. Definitely a 5-star experience!",
+    name: "Ahmed K.",
+    review: "They fixed my dishwasher in no time. Very reliable and transparent pricing. Highly recommend!",
+    rating: "5/5"
   },
   {
-    name: "James M.",
-    review: "Solved our washer motor issue within hours. Courteous staff!",
+    name: "Noor H.",
+    review: "My oven was acting up, and their team restored it perfectly. Courteous and fast service!",
+    rating: "5/5"
   },
   {
-    name: "Ayesha T.",
-    review: "Loved the transparency and reliability. Would recommend them again.",
-  },
+    name: "Sara M.",
+    review: "Fantastic repair for my dryer. The technician used genuine parts and ensured everything worked perfectly.",
+    rating: "5/5"
+  }
 ];
 
-export default function Testimonials() {
-  const [index, setIndex] = useState(0);
+const Testimonials = () => {
+  const [showAll, setShowAll] = useState(false);
 
-  const prev = () => setIndex((index - 1 + testimonials.length) % testimonials.length);
-  const next = () => setIndex((index + 1) % testimonials.length);
+  const toggleShowAll = () => {
+    setShowAll(!showAll);
+  };
+
+  const displayedTestimonials = showAll ? testimonials : testimonials.slice(0, 3);
 
   return (
-    <section
-      className="testimonial-section"
-      style={{ backgroundImage: `url(${backgroundImage})` }}
-    >
-      <div className="testimonial-overlay">
-        <div className="testimonial-container">
-          <button className="arrow left" onClick={prev}>&#10094;</button>
-
-          <div className="testimonial-box">
-            <h2 className="testimonial-title">TESTIMONIALS</h2>
-            <hr className="testimonial-line" />
-            <p className="testimonial-text">“{testimonials[index].review}”</p>
-            <div className="testimonial-stars">★★★★★</div>
-            <p className="testimonial-author">{testimonials[index].name}</p>
+    <>
+      <section className="testimonials-section">
+        <div className="testimonials-container">
+          <h2 className="testimonials-heading">Testimonials</h2>
+          <div className="testimonials-line"></div>
+          <div className="testimonials-grid">
+            {displayedTestimonials.map((testimonial, index) => (
+              <div className="testimonial-card" key={index} style={{ animationDelay: `${index * 0.2}s` }}>
+                <div className="testimonial-card-border"></div>
+                <div className="testimonial-card-content">
+                  <div className="testimonial-icon-container">
+                    <FaCommentAlt className="testimonial-icon" />
+                    <FaStar className="testimonial-star-icon" />
+                  </div>
+                  <p className="testimonial-review">“{testimonial.review}”</p>
+                  <h3 className="testimonial-name">{testimonial.name}</h3>
+                  <div className="testimonial-rating">
+                    <span>{testimonial.rating}</span>
+                    <div className="testimonial-stars">
+                      {[...Array(5)].map((_, i) => (
+                        <FaStar key={i} className="testimonial-star" />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
-
-          <button className="arrow right" onClick={next}>&#10095;</button>
+          <div className="testimonials-button-container">
+            <button className="testimonials-view-all-button" onClick={toggleShowAll}>
+              {showAll ? 'Hide Reviews' : 'View All Reviews'}
+            </button>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+      <section className="trust-section">
+        <div className="trust-container">
+          <h2 className="trust-heading">Service You Can Trust!</h2>
+          <p className="trust-text">Let us know how we can help you today.</p>
+          <Link to="/booking" className="trust-button">
+            Easy Online Booking
+          </Link>
+        </div>
+      </section>
+    </>
   );
-}
+};
+
+export default Testimonials;

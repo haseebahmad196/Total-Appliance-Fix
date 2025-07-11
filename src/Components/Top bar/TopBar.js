@@ -1,40 +1,33 @@
 import React from 'react';
-import '@fortawesome/fontawesome-free/css/all.min.css';
 import './TopBar.css';
+import { FaFacebookF, FaInstagram } from 'react-icons/fa';
 
 function TopBar() {
   return (
     <header className="top-bar">
-      <div className="social-icons" aria-label="Social media links">
+      <nav className="social-icons" aria-label="Social media links">
         <a
-          href="https://facebook.com"
+          href="https://www.facebook.com/totalappliancefix/"
           target="_blank"
-          rel="nofollow noreferrer"
+          rel="nofollow"
           aria-label="Visit our Facebook page"
           className="social-icon"
         >
-          <i className="fab fa-facebook-f"></i>
+          <FaFacebookF />
         </a>
         <a
-          href="https://twitter.com"
+          href="https://www.instagram.com/totalappliancefix/"
           target="_blank"
-          rel="nofollow noreferrer"
-          aria-label="Visit our Twitter page"
-          className="social-icon"
-        >
-          <i className="fab fa-twitter"></i>
-        </a>
-        <a
-          href="https://instagram.com"
-          target="_blank"
-          rel="nofollow noreferrer"
+          rel="nofollow"
           aria-label="Visit our Instagram page"
           className="social-icon"
         >
-          <i className="fab fa-instagram"></i>
+          <FaInstagram />
         </a>
+      </nav>
+      <div className="top-bar-content">
+        <p className="top-bar-statement">Trusted Appliance Repair for Dubai’s Homes</p>
       </div>
-      <p className="top-bar-text">We Provide Most Popular Repair Services</p>
     </header>
   );
 }
