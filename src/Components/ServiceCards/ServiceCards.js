@@ -5,7 +5,8 @@ import washerImg from '../../assests/wrepair.jpg';
 import refImg from '../../assests/ref.webp';
 import dishwasherImg from '../../assests/d1.webp';
 import gasImg from '../../assests/gas.webp';
-import { Link } from 'react-router-dom'; // Confirm import
+import { FaTools, FaTshirt, FaSnowflake, FaUtensils, FaFire } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const services = [
   {
@@ -18,7 +19,9 @@ const services = [
       "Appliance repair Dubai",
       "Technical appliance repair"
     ],
-    image: applianceImg
+    image: applianceImg,
+    icon: FaTools,
+    iconType: 'react-icon'
   },
   {
     title: "Washing Machine Repair",
@@ -31,7 +34,9 @@ const services = [
       "Samsung washing machine repair",
       "LG washer repair Dubai"
     ],
-    image: washerImg
+    image: washerImg,
+    icon: FaTshirt,
+    iconType: 'react-icon'
   },
   {
     title: "Fridge / Refrigerator Repair",
@@ -44,7 +49,9 @@ const services = [
       "Bosch refrigerator repair Dubai",
       "Fridge gas refill service"
     ],
-    image: refImg
+    image: refImg,
+    icon: FaSnowflake,
+    iconType: 'react-icon'
   },
   {
     title: "Dishwasher Repair",
@@ -57,7 +64,9 @@ const services = [
       "Dishwasher leaking repair",
       "Miele dishwasher technician"
     ],
-    image: dishwasherImg
+    image: dishwasherImg,
+    icon: FaUtensils,
+    iconType: 'react-icon'
   },
   {
     title: "Kitchen Gas or Electric Oven, Stove, & Range Repair",
@@ -71,7 +80,9 @@ const services = [
       "Oven repair Dubai",
       "Electric stove repair"
     ],
-    image: gasImg
+    image: gasImg,
+    icon: FaFire,
+    iconType: 'react-icon'
   }
 ];
 
@@ -83,24 +94,27 @@ const ServiceCards = () => {
         <div className="servicecards-grid">
           {services.map((service, index) => (
             <div className="servicecard" key={index} style={{ animationDelay: `${index * 0.2}s` }}>
-              <img src={service.image} alt={service.title} className="servicecard-img" />
+              <div className="servicecard-img-container">
+                <img src={service.image} alt={service.title} className="servicecard-img" />
+              </div>
               <div className="servicecard-body">
                 <h3 className="servicecard-title">{service.title}</h3>
-                <ul className="servicecard-keywords">
-                  {service.keywords.map((keyword, i) => (
-                    <li key={i}>• {keyword}</li>
-                  ))}
-                </ul>
-                <div className="servicecard-learnmore">
-                  <Link
-                    to={`/services/${service.title.toLowerCase().replace(/\/|&|\s|,|\(|\)/g, '-')}`}
-                    className="learnmore-link"
-                    onClick={(e) => {
-                      window.scrollTo({ top: 0, behavior: 'smooth' });
-                    }}
-                  >
-                    Learn More
-                  </Link>
+                <p className="servicecard-keywords">
+                  {service.keywords.join(', ')}
+                </p>
+                <div className="servicecard-footer">
+                  <div className="servicecard-learnmore">
+                    <Link
+                      to={`/services/${service.title.toLowerCase().replace(/\/|&|\s|,|\(|\)/g, '-')}`}
+                      className="learnmore-link"
+                      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                    >
+                      Learn More
+                    </Link>
+                  </div>
+                  <div className="servicecard-icon-container">
+                    <service.icon className="servicecard-icon" />
+                  </div>
                 </div>
               </div>
             </div>
