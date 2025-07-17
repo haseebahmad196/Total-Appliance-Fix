@@ -1,6 +1,6 @@
 import React from 'react';
 import './TopBar.css';
-import { FaFacebookF, FaInstagram } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 
 function TopBar() {
   return (
@@ -23,6 +23,15 @@ function TopBar() {
           className="social-icon"
         >
           <FaInstagram />
+        </a>
+        <a
+          href="https://wa.me/971504161201"
+          target="_blank"
+          rel="nofollow"
+          aria-label="Chat with us on WhatsApp"
+          className="social-icon"
+        >
+          <FaWhatsapp />
         </a>
       </nav>
       <div className="top-bar-content">

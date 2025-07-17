@@ -2,7 +2,7 @@ import React from 'react';
 import './BrandCarouselAndFooter.css';
 import { FaFacebookF, FaInstagram } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import logo from '../../assests/log.jpg';
+import logo from '../../assests/Frame 9.png';
 import panasonic from '../../assests/panasonic.png';
 import siemens from '../../assests/siemens.png';
 import bosch from '../../assests/bosch.png';

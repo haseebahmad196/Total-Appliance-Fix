@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import logo from '../../assests/log.jpg';
+import logo from '../../../src/assests/Frame 9.png';
 import './Header.css'
 
 function Header() {
@@ -27,86 +27,74 @@ function Header() {
     <nav className="header" aria-label="Main navigation">
       <div className="logo">
         <a href="/">
-          <img src={logo} alt="FixQuick Appliance Repair Logo" className="logo-img" />
+          <img src={logo} alt="Total Appliance Fix Logo" className="logo-img" />
         </a>
       </div>
       <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
         <li><a href="/" className="nav-link">Home</a></li>
         <li className="dropdown">
-          <a
-            href="/home-appliance-repair"
-            className="nav-link"
+          <span
+            className="nav-link dropdown-toggle"
             aria-haspopup="true"
             onClick={toggleHomeDropdown}
           >
             Home Appliance Repair
             <span className="dropdown-arrow">{isHomeDropdownOpen ? '▲' : '▼'}</span>
-          </a>
+          </span>
           <ul className={`dropdown-menu ${isHomeDropdownOpen ? 'active' : ''}`}>
             <li>
-              <a href="/washing-machine-repair" className="dropdown-item">
+              <span className="dropdown-item">
                 Washing Machine Repair
-              </a>
+              </span>
             </li>
             <li>
-              <a href="/electric-gas-cooker-repair" className="dropdown-item">
+              <span className="dropdown-item">
                 Electric/Gas Cooker Repair
-              </a>
+              </span>
             </li>
             <li>
-              <a href="/microwave-oven-repair" className="dropdown-item">
+              <span className="dropdown-item">
                 Microwave Oven Repair
-              </a>
+              </span>
             </li>
             <li>
-              <a href="/fridge-repairing-uae" className="dropdown-item">
+              <span className="dropdown-item">
                 Fridge Repairing in UAE
-              </a>
+              </span>
             </li>
           </ul>
         </li>
-        <li><a href="/ac-repair" className="nav-link">AC Repair</a></li>
+        <li><span className="nav-link">AC Repair</span></li>
         <li className="dropdown">
-          <a
-            href="/other-services"
-            className="nav-link"
+          <span
+            className="nav-link dropdown-toggle"
             aria-haspopup="true"
             onClick={toggleOtherDropdown}
           >
             Other Services
             <span className="dropdown-arrow">{isOtherDropdownOpen ? '▲' : '▼'}</span>
-          </a>
+          </span>
           <ul className={`dropdown-menu ${isOtherDropdownOpen ? 'active' : ''}`}>
             <li>
-              <a href="/other-home-appliances-repair" className="dropdown-item">
+              <span className="dropdown-item">
                 Other Home Appliances Repair
-              </a>
+              </span>
             </li>
             <li>
-              <a href="/dryer-repair" className="dropdown-item">Dryer Repair</a>
+              <span className="dropdown-item">Dryer Repair</span>
             </li>
             <li>
-              <a href="/dish-washer-repair" className="dropdown-item">Dish Washer Repair</a>
+              <span className="dropdown-item">Dish Washer Repair</span>
             </li>
           </ul>
         </li>
-        <li><a href="/about" className="nav-link">About</a></li>
+        <li><span className="nav-link">About</span></li>
         <li>
           <a href="/booking" className="nav-link booking-button">
             <i className="fas fa-calendar-alt"></i> Easy Online Booking
           </a>
         </li>
-        <li className="mobile-cta">
-          <a href="tel:+971586143836" className="cta-button">
-            <i className="fas fa-phone"></i> +971 58 614 3836
-          </a>
-        </li>
       </ul>
-      <div className="cta">
-        <a href="tel:+971586143836" className="cta-button">
-          <i className="fas fa-phone"></i> +971 58 614 3836
-        </a>
-      </div>
       <div className="hamburger" aria-label="Toggle menu" onClick={toggleMenu}>
         <span className={`hamburger-icon ${isMenuOpen ? 'open' : ''}`}>
           <span></span>

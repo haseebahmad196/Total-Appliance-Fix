@@ -1,33 +1,31 @@
-/* src/Components/Hero/Hero.css */
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap');
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
 }
 
-/* HERO SECTION */
+/* Hero Section */
 .hero-section {
-  background-image: url('../../assests//washingMachine.jpg'); /* Adjust path as needed */
   background-size: cover;
   background-position: center;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: #ffffff;
   position: relative;
   overflow: hidden;
+  transition: background 1s ease-in-out; /* Smooth fade for slider backgrounds */
 }
 
 .hero-section::after {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: brightness(0.8);
+  background: linear-gradient(to bottom, rgba(0, 255, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%); /* Professional gradient overlay for depth */
+  backdrop-filter: blur(2px) brightness(0.7);
   z-index: 1;
 }
 
@@ -36,38 +34,33 @@ body {
   z-index: 2;
   padding: 20px;
   width: 100%;
-  max-width: 1100px;
+  max-width: 1200px; /* Wider for professional layout */
 }
 
-/* Glass Card with border ring and lighting */
+/* Glass Card - More Elegant with Subtle Glow */
 .hero-card {
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 24px;
-  padding: 40px 30px;
-  backdrop-filter: blur(18px);
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4), 0 8px 50px rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.08));
+  border-radius: 16px;
+  padding: 50px 40px; /* Increased padding for elegance */
+  backdrop-filter: blur(15px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), inset 0 1px 3px rgba(255, 255, 255, 0.2); /* Professional shadow and inner glow */
+  border: 1px solid rgba(255, 255, 255, 0.2);
   position: relative;
   text-align: center;
-  transition: all 0.3s ease;
-  animation: fadeInUp 1.2s ease-out forwards;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: fadeInUp 1.4s ease-out forwards;
 }
 
-.hero-card::before {
-  content: "";
-  position: absolute;
-  inset: -2px;
-  z-index: -1;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-  border-radius: inherit;
-  box-shadow: 0 0 60px rgba(255, 255, 255, 0.05);
+.hero-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4), inset 0 2px 5px rgba(255, 255, 255, 0.25);
 }
 
-/* Fade animation */
+/* Fade Animation with Staggered Delays */
 @keyframes fadeInUp {
   0% {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(50px);
   }
   100% {
     opacity: 1;
@@ -75,113 +68,168 @@ body {
   }
 }
 
-/* Typography */
 .hero-title {
-  font-size: clamp(2.5rem, 6vw, 4rem);
+  animation-delay: 0.2s;
+}
+
+.hero-description {
+  animation-delay: 0.4s;
+}
+
+.hero-subtext {
+  animation-delay: 0.6s;
+}
+
+.cta-container {
+  animation-delay: 0.8s;
+}
+
+/* Typography - More Professional */
+.hero-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(2.8rem, 6.5vw, 4.5rem); /* Slightly larger for impact */
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 1.5rem;
   color: #ffffff;
-  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.6);
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  letter-spacing: 1px;
   text-transform: uppercase;
 }
 
 .hero-description {
-  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-  color: #e0e0e0;
-  line-height: 1.7;
-  max-width: 800px;
-  margin: 0 auto 20px;
+  font-family: 'Roboto', sans-serif;
+  font-size: clamp(1.2rem, 2.8vw, 1.6rem);
+  color: #f0f0f0;
+  line-height: 1.8;
+  max-width: 900px;
+  margin: 0 auto 1.5rem;
+  font-weight: 400;
 }
 
 .hero-subtext {
-  color: #ffb92a;
-  font-weight: 600;
-  font-size: 1rem;
-  margin-bottom: 25px;
-  letter-spacing: 0.5px;
+  font-family: 'Roboto', sans-serif;
+  color: #ffd966; /* Softer gold for elegance */
+  font-weight: 500;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  letter-spacing: 0.8px;
+  font-style: italic; /* Added for professional flair */
 }
 
-/* CTA Section */
+/* CTA Section - Refined for Client Engagement */
 .cta-container {
-  margin-top: 30px;
+  margin-top: 2.5rem;
 }
 
 .cta-phone-number {
-  font-size: 1.4rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
   font-weight: 600;
   color: #ffffff;
-  margin-bottom: 20px;
+  margin-bottom: 1.5rem;
 }
 
 .cta-phone-number strong {
-  color: #f97316;
+  color: #ff7f00; /* Muted orange for professionalism */
 }
 
-/* Buttons */
+/* Buttons - More Sophisticated with Gradients */
 .cta-buttons {
   display: flex;
   justify-content: center;
-  gap: 16px;
+  gap: 20px;
   flex-wrap: wrap;
-  margin-top: 10px;
+  margin-top: 1rem;
 }
 
 .cta-btn {
-  font-size: 1rem;
-  padding: 12px 24px;
+  font-family: 'Poppins', sans-serif; /* Bolder font for buttons */
+  font-size: 1.1rem;
+  padding: 14px 28px;
   border: none;
-  border-radius: 30px;
-  font-weight: 500;
+  border-radius: 50px; /* Rounder for modern look */
+  font-weight: 600;
   color: #fff;
   display: flex;
   align-items: center;
-  gap: 10px;
-  transition: all 0.3s ease;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  gap: 12px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
   cursor: pointer;
 }
 
+.cta-btn:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+}
+
 .phone-btn {
-  background-color: #f97316;
+  background: linear-gradient(135deg, #ff7f00, #e66c00); /* Professional gradient */
 }
 
 .phone-btn:hover {
-  background-color: #ea580c;
-  transform: translateY(-4px);
+  background: linear-gradient(135deg, #e66c00, #cc5a00);
 }
 
 .whatsapp-btn {
-  background-color: #25d366;
+  background: linear-gradient(135deg, #25d366, #1fa953); /* Refined green gradient */
 }
 
 .whatsapp-btn:hover {
-  background-color: #128c7e;
-  transform: translateY(-4px);
+  background: linear-gradient(135deg, #1fa953, #128c7e);
 }
 
 .cta-btn i {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 
-/* Responsive Layout */
+/* Carousel Indicators - Sleeker Design */
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 2.5rem;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.4s ease, transform 0.4s ease;
+}
+
+.indicator.active {
+  background-color: #ffffff;
+  transform: scale(1.2);
+}
+
+/* Responsive Layout - Enhanced for Professionals */
 @media (max-width: 768px) {
   .hero-title {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
   }
 
   .hero-description {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 
   .cta-phone-number {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   .cta-buttons {
     flex-direction: column;
-    gap: 14px;
+    gap: 16px;
   }
 
+  .hero-card {
+    padding: 40px 25px;
+  }
+}
+
+@media (max-width: 480px) {
   .hero-card {
     padding: 30px 20px;
   }
