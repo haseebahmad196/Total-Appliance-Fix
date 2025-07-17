@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './Testimonials.css';
 import { FaCommentAlt, FaStar } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
@@ -28,21 +28,51 @@ const testimonials = [
     name: "Sara M.",
     review: "Fantastic repair for my dryer. The technician used genuine parts and ensured everything worked perfectly.",
     rating: "5/5"
+  },
+  {
+    name: "John Smith",
+    review: "Outstanding AC repair service. The team was punctual and resolved the issue efficiently. Will use again!",
+    rating: "5/5"
+  },
+  {
+    name: "Maria Garcia",
+    review: "My microwave is working like new thanks to their expert repair. Highly satisfied with the results.",
+    rating: "4.5/5"
+  },
+  {
+    name: "Li Wei",
+    review: "Professional and quick fix for my gas cooker. Excellent customer service and fair pricing.",
+    rating: "5/5"
+  },
+  {
+    name: "Emily Johnson",
+    review: "They handled my refrigerator repair with great care. Reliable and trustworthy service.",
+    rating: "5/5"
+  },
+  {
+    name: "Raj Patel",
+    review: "Impressed with the speedy repair of my dishwasher. The technician was very knowledgeable.",
+    rating: "4.8/5"
   }
 ];
 
 const Testimonials = () => {
   const [showAll, setShowAll] = useState(false);
+  const testimonialsRef = useRef(null);
 
   const toggleShowAll = () => {
-    setShowAll(!showAll);
+    const newShowAll = !showAll;
+    setShowAll(newShowAll);
+    if (!newShowAll && testimonialsRef.current) {
+      testimonialsRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   const displayedTestimonials = showAll ? testimonials : testimonials.slice(0, 3);
 
   return (
     <>
-      <section className="testimonials-section">
+      <section className="testimonials-section" ref={testimonialsRef}>
         <div className="testimonials-container">
           <h2 className="testimonials-heading">Testimonials</h2>
           <div className="testimonials-line"></div>

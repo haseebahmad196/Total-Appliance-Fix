@@ -38,11 +38,11 @@ const Hero = () => {
   }, []);
 
   const handleCallClick = () => {
-    window.location.href = 'tel:+971586143836';
+    window.location.href = 'tel:+971504161201';
   };
 
   const handleWhatsAppClick = () => {
-    window.location.href = 'https://wa.me/971586143836';
+    window.location.href = 'https://wa.me/971504161201';
   };
 
   return (
@@ -57,7 +57,7 @@ const Hero = () => {
 
           <div className="cta-container">
             <p className="cta-phone-number">
-              CALL US NOW: <strong>+971 58 614 3836</strong>
+              CALL US NOW: <strong>+971 50 416 1201</strong>
             </p>
 
             <div className="cta-buttons">
