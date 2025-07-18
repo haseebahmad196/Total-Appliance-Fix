@@ -68,6 +68,7 @@
   line-height: 1.9;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
+  text-align: left; /* Align text to left for better readability and alignment */
 }
 
 .chooseus-image {
@@ -150,7 +151,7 @@
   }
 
   .chooseus-text {
-    text-align: center;
+    text-align: left;
     padding: 0 15px;
     max-width: 100%;
   }

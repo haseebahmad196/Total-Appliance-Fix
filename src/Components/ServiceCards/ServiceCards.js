@@ -2,7 +2,7 @@ import React from 'react';
 import './ServiceCards.css';
 import applianceImg from '../../assests/ga1.jpg';
 import washerImg from '../../assests/wrepair.jpg';
-import refImg from '../../assests/ref.webp';
+import f1Img from '../../assests/f1.webp';
 import dishwasherImg from '../../assests/d1.webp';
 import gasImg from '../../assests/gas.webp';
 
@@ -43,7 +43,7 @@ const services = [
       "Bosch refrigerator repair Dubai",
       "Fridge gas refill service"
     ],
-    image: refImg
+    image: f1Img
   },
   {
     title: "Dishwasher Repair",
@@ -90,11 +90,9 @@ const ServiceCards = () => {
               <img src={service.image} alt={service.title} className="servicecard-img" />
               <div className="servicecard-body">
                 <h3 className="servicecard-title">{service.title}</h3>
-                <ul className="servicecard-keywords">
-                  {service.keywords.map((keyword, i) => (
-                    <li key={i}>• {keyword}</li>
-                  ))}
-                </ul>
+                <p className="servicecard-keywords">
+                  {service.keywords.join(', ')}
+                </p>
                 <div className="servicecard-learnmore">
                   <button
                     onClick={handleLearnMore}

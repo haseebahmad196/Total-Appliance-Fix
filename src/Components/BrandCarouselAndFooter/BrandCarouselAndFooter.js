@@ -1,7 +1,6 @@
 import React from 'react';
 import './BrandCarouselAndFooter.css';
-import { FaFacebookF, FaInstagram } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { FaFacebookF, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import logo from '../../assests/Frame 9.png';
 import panasonic from '../../assests/panasonic.png';
 import siemens from '../../assests/siemens.png';
@@ -16,7 +15,7 @@ const BrandCarouselAndFooter = () => {
     <>
       <div className="brand-carousel-container">
         <div className="brand-carousel-track">
-          {[...logos, ...logos].map((logo, i) => (
+          {logos.map((logo, i) => (
             <div className="brand-logo" key={i}>
               <img src={logo} alt={`Brand ${i + 1}`} />
             </div>
@@ -30,7 +29,7 @@ const BrandCarouselAndFooter = () => {
             <div className="footer-logo-container">
               <img src={logo} alt="Total Appliance Fix Logo" className="footer-logo" />
             </div>
-            <p className="footer-contact-number">📞 +971 58 614 3836</p>
+            <p className="footer-contact-number">📞 +971 50 416 1201</p>
             <div className="footer-social-icons">
               <a
                 href="https://www.facebook.com/totalappliancefix/"
@@ -48,6 +47,14 @@ const BrandCarouselAndFooter = () => {
               >
                 <FaInstagram className="footer-social-icon" />
               </a>
+              <a
+                href="https://wa.me/971504161201"
+                aria-label="WhatsApp"
+                rel="nofollow"
+                target="_blank"
+              >
+                <FaWhatsapp className="footer-social-icon" />
+              </a>
             </div>
           </div>
 
@@ -61,32 +68,38 @@ const BrandCarouselAndFooter = () => {
           <nav className="footer-links">
             <h3>Quick Links</h3>
             <ul>
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/about">About</Link></li>
-              <li><Link to="/services">Services</Link></li>
-              <li><Link to="/blog">Blog</Link></li>
-              <li><Link to="/contact">Contact</Link></li>
+              <li><span className="footer-link-item">Home</span></li>
+              <li><span className="footer-link-item">About</span></li>
+              <li><span className="footer-link-item">Services</span></li>
+              <li><span className="footer-link-item">Blog</span></li>
+              <li><span className="footer-link-item">Contact</span></li>
             </ul>
           </nav>
 
           <div className="footer-services">
             <h3>Our Services</h3>
             <ul>
-              <li><Link to="/services/washing-machine-repair">Washing Machine Repair</Link></li>
-              <li><Link to="/services/fridge-repair">Fridge Repair</Link></li>
-              <li><Link to="/services/ac-repair">AC Repair</Link></li>
-              <li><Link to="/services/dishwasher-repair">Dishwasher Repair</Link></li>
-              <li><Link to="/services/cooker-repair">Gas/Electric Cooker Repair</Link></li>
+              <li><span className="footer-link-item">Washing Machine Repair</span></li>
+              <li><span className="footer-link-item">Fridge Repair</span></li>
+              <li><span className="footer-link-item">AC Repair</span></li>
+              <li><span className="footer-link-item">Dishwasher Repair</span></li>
+              <li><span className="footer-link-item">Gas/Electric Cooker Repair</span></li>
             </ul>
           </div>
 
           <address className="footer-contact">
             <h3>Contact Info</h3>
             <p>Total Appliance Fix<br />Dubai, United Arab Emirates</p>
-            <p>📞 <a href="tel:+971586143836">+971 58 614 3836</a></p>
-            <p>✉️ <a href="mailto:hello@totalappliancefix.com">hello@totalappliancefix.com</a></p>
-            <p>🌐 <a href="https://totalappliancefix.com" target="_blank" rel="nofollow">totalappliancefix.com</a></p>
+            <p>📞 <span className="footer-contact-item">+971 50 416 1201</span></p>
+            <p>✉️ <span className="footer-contact-item">hello@totalappliancefix.com</span></p>
+            <p>🌐 <span className="footer-contact-item">totalappliancefix.com</span></p>
           </address>
+        </div>
+
+        <div className="footer-booking-button-container">
+          <a href="/booking" className="footer-booking-button">
+            <i className="fas fa-calendar-alt"></i> Easy Online Booking
+          </a>
         </div>
 
         <div className="footer-bottom">

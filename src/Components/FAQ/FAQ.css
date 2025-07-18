@@ -36,7 +36,7 @@
   font-size: 0.95rem;
   font-weight: 400;
   color: #4b5563;
-  text-align: center;
+  text-align: left; /* Changed to left for natural alignment */
   max-width: 800px;
   margin: 0 auto 40px;
   line-height: 1.8;
@@ -129,6 +129,7 @@
   font-family: 'Roboto', sans-serif;
   line-height: 1.8;
   margin: 0;
+  text-align: left; /* Align answer text to left */
 }
 
 .faq-button-container {
